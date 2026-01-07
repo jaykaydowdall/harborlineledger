@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harborline Ledger — U.S. Seizes Russian-Flagged Oil Tanker in Atlantic After Weeks-Long Pursuit</title>
+  <style>
+    :root{
+      --bg:#0b0f15;
+      --card:#0f1724;
+      --muted:#9aa7b8;
+      --text:#e9eef6;
+      --line:rgba(255,255,255,.10);
+      --accent:#4aa3ff;
+      --chip:#162235;
+      --shadow:0 8px 24px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:linear-gradient(180deg,#070a0f 0%, #0b0f15 35%, #0b0f15 100%);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 16px}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,15,21,.88);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .toprow{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+    }
+    .logo{display:flex; align-items:center; gap:12px; min-width:180px;}
+    .logoMark{
+      width:34px;height:34px;border-radius:10px;
+      background:linear-gradient(135deg, rgba(74,163,255,.95), rgba(97,255,189,.85));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center; color:#08101a; font-weight:900;
+      letter-spacing:.5px;
+    }
+    .logoText{display:flex; flex-direction:column; line-height:1.1}
+    .logoText strong{font-size:14px; letter-spacing:.4px}
+    .logoText span{font-size:12px; color:var(--muted)}
+    nav{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center;}
+    nav a{font-size:13px; color:var(--muted); padding:8px 10px; border-radius:12px;}
+    nav a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .utils{display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width:180px;}
+    .iconBtn{
+      width:36px; height:36px; border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      display:grid; place-items:center;
+      color:var(--muted); font-size:14px;
+    }
+    .iconBtn:hover{color:var(--text); border-color:rgba(255,255,255,.18)}
+    .progress{height:3px; background:rgba(255,255,255,.06);}
+    .progress > div{height:3px; width:0%; background:linear-gradient(90deg, rgba(74,163,255,.95), rgba(97,255,189,.85));}
+
+    .ticker{border-bottom:1px solid var(--line); background:rgba(255,255,255,.02);}
+    .tickerRow{display:flex; gap:16px; overflow:auto; padding:10px 0; scrollbar-width: thin;}
+    .tick{
+      display:flex; align-items:center; gap:10px;
+      white-space:nowrap;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.02);
+      border-radius:999px;
+      min-width:max-content;
+    }
+    .tick .dot{width:7px; height:7px; border-radius:99px; background:var(--accent); box-shadow: 0 0 0 4px rgba(74,163,255,.12);}
+    .tick span{font-size:13px; color:var(--text)}
+    .tick small{font-size:12px; color:var(--muted)}
+
+    .grid{display:grid; grid-template-columns: 1.6fr .7fr; gap:18px; padding:18px 0 28px;}
+    @media (max-width: 980px){
+      .grid{grid-template-columns: 1fr;}
+      .utils{display:none}
+      nav{justify-content:flex-start}
+      .logo{min-width:auto}
+    }
+
+    .card{
+      background:rgba(15,23,36,.82);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:16px}
+    .metaRow{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:10px;}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(22,34,53,.95);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+    }
+    .chip b{color:var(--text); font-weight:700}
+    h1{font-size:30px; line-height:1.15; margin:0; letter-spacing:-.2px;}
+    @media (max-width: 560px){ h1{font-size:26px} }
+
+    .hero{position:relative; border-bottom:1px solid var(--line);}
+    .imgph{
+      display:grid; place-items:center;
+      min-height:280px;
+      background:
+        radial-gradient(900px 300px at 15% 0%, rgba(74,163,255,.20), rgba(0,0,0,0) 60%),
+        radial-gradient(700px 280px at 85% 10%, rgba(97,255,189,.14), rgba(0,0,0,0) 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+    .imgph span{
+      font-size:13px; color:var(--muted);
+      border:1px dashed rgba(255,255,255,.20);
+      padding:10px 12px; border-radius:14px;
+      background:rgba(0,0,0,.25);
+      text-align:center;
+    }
+
+    .article p{margin:0 0 14px}
+    .article p:last-child{margin-bottom:0}
+    .subhead{margin:18px 0 10px; font-weight:800; letter-spacing:.2px; font-size:15px; color:var(--text);}
+
+    .inlineBreak{
+      margin:18px 0;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+    }
+    .inlineBreak .top{
+      padding:12px 14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      border-bottom:1px solid var(--line);
+    }
+    .inlineBreak .top strong{font-size:13px}
+    .inlineBreak .top small{color:var(--muted); font-size:12px}
+
+    .tiles{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; padding:12px;}
+    @media (max-width: 760px){ .tiles{grid-template-columns: 1fr} }
+
+    .tile{
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      background:rgba(255,255,255,.02);
+    }
+    .tile .thumb{
+      min-height:120px;
+      display:grid; place-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border-bottom:1px solid var(--line);
+    }
+    .tile .thumb span{
+      font-size:12px; color:var(--muted);
+      border:1px dashed rgba(255,255,255,.18);
+      padding:8px 10px; border-radius:12px;
+      background:rgba(0,0,0,.22);
+      text-align:center;
+    }
+    .tile .body{padding:12px}
+    .tile .body .kicker{color:var(--muted); font-size:12px; margin-bottom:6px}
+    .tile .body .title{font-weight:800; font-size:14px; line-height:1.25}
+
+    .adSlot{
+      border:1px dashed rgba(255,255,255,.22);
+      border-radius:16px;
+      background:rgba(0,0,0,.18);
+      display:grid; place-items:center;
+      color:var(--muted);
+      min-height:140px;
+    }
+    .adSlot span{font-size:12px; padding:10px 12px; background:rgba(0,0,0,.22); border-radius:12px; text-align:center;}
+    .adSlot.tall{min-height:260px}
+
+    .sideCard h3{margin:0 0 10px; font-size:14px; letter-spacing:.2px}
+    .sideList{display:flex; flex-direction:column; gap:10px}
+    .sItem{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px; border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.02);
+    }
+    .sThumb{
+      width:58px; height:58px; border-radius:14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+      overflow:hidden;
+    }
+    .sThumb span{font-size:11px; color:var(--muted); text-align:center; padding:4px}
+    .sText .title{font-weight:800; font-size:13px; line-height:1.25; margin:0 0 4px}
+    .sText .sub{color:var(--muted); font-size:12px}
+
+    .timeline{margin-top:14px; border-top:1px solid var(--line); padding-top:14px;}
+    .tRow{display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06);}
+    .tRow:last-child{border-bottom:0}
+    .tTime{min-width:88px; color:var(--muted); font-size:12px; padding-top:2px;}
+    .tBody{flex:1;}
+    .tBody p{margin:0; color:var(--text); font-size:13px}
+    .tBody a{
+      display:inline-flex; gap:8px; align-items:center;
+      margin-top:6px;
+      color:var(--muted);
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.10);
+      padding:6px 10px; border-radius:999px;
+      background:rgba(255,255,255,.02);
+    }
+    .tBody a:hover{color:var(--text); border-color:rgba(255,255,255,.18)}
+
+    footer{
+      border-top:1px solid var(--line);
+      margin-top:18px;
+      padding:18px 0 26px;
+      color:var(--muted);
+      background:rgba(255,255,255,.02);
+    }
+    .footRow{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+    .footLinks{display:flex; gap:12px; flex-wrap:wrap}
+    .footLinks a{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(0,0,0,.14);
+    }
+    .footLinks a:hover{border-color:rgba(255,255,255,.16); color:var(--text)}
+    .copy{font-size:12px}
+
+    /* Image rendering (keeps layout, replaces placeholders) */
+    .imgph img,
+    .tile .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .tile .thumb{position:relative}
+    .sThumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .adSlot img{
+      max-width:100%;
+      height:auto;
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="toprow">
+        <a class="logo" href="#" aria-label="Harborline Ledger home">
+          <div class="logoMark">HL</div>
+          <div class="logoText">
+            <strong>Harborline Ledger</strong>
+            <span>Independent News Wire</span>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="#">World</a>
+          <a href="#">U.S.</a>
+          <a href="#">Business</a>
+          <a href="#">Energy</a>
+          <a href="#">Security</a>
+          <a href="#">Markets</a>
+        </nav>
+
+        <div class="utils" aria-label="Utility">
+          <a class="iconBtn" href="#" aria-label="Search">⌕</a>
+          <a class="iconBtn" href="#" aria-label="Newsletter">✉</a>
+          <a class="iconBtn" href="#" aria-label="Account">☰</a>
+        </div>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+  </div>
+
+  <div class="ticker">
+    <div class="wrap">
+      <div class="tickerRow" aria-label="Top ticker">
+        <a class="tick" href="#">
+          <div class="dot"></div>
+          <span>Oil shipping insurers tighten Atlantic routes</span>
+          <small>• Guide</small>
+        </a>
+        <a class="tick" href="#">
+          <div class="dot"></div>
+          <span>What sanctions mean for everyday fuel costs</span>
+          <small>• Calculator</small>
+        </a>
+        <a class="tick" href="#">
+          <div class="dot"></div>
+          <span>Check your exposure to market volatility</span>
+          <small>• Tool</small>
+        </a>
+        <a class="tick" href="#">
+          <div class="dot"></div>
+          <span>Travel advisories: North Atlantic crossings</span>
+          <small>• Service</small>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <div class="grid">
+      <article class="card" aria-label="Article">
+        <div class="hero">
+          <div class="imgph" data-img="hero-1200x630.webp" aria-label="Hero image">
+            <img src="assets/hero-1200x630.webp" alt="Hero image" />
+          </div>
+        </div>
+
+        <div class="pad">
+          <div class="metaRow">
+            <span class="chip"><b>World</b></span>
+            <span class="chip">By <b>Harborline Staff</b></span>
+            <span class="chip">Published <b id="pubDate">Today</b></span>
+            <span class="chip">Updated <b id="updTime">—</b></span>
+          </div>
+
+          <h1 style="margin-top:12px;">U.S. Seizes Russian-Flagged Oil Tanker in Atlantic After Weeks-Long Pursuit</h1>
+
+          <div class="article" id="articleBody" style="margin-top:14px;">
+            <p>U.S. authorities seized a Russian-flagged oil tanker in the North Atlantic on Wednesday after a weeks-long pursuit, according to U.S. officials. The vessel is now in U.S. custody, officials said, after an operation they described as conducted under a federal court warrant.</p>
+
+            <p>U.S. officials said the tanker was targeted in connection with alleged violations of U.S. sanctions and restrictions tied to the movement of oil. Details about the ship’s ownership, cargo, and destination were not fully disclosed in initial public statements, and the U.S. government has not released a complete account of evidence supporting the seizure.</p>
+
+            <div class="inlineBreak" role="complementary" aria-label="Contextual links">
+              <div class="top">
+                <strong>Quick tools readers often check next</strong>
+                <small>External resources</small>
+              </div>
+              <div class="tiles">
+                <a class="tile" href="https://gasprices.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="thumb" data-img="context-1-420x240.webp">
+                    <img src="assets/context-1-420x240.webp" alt="Contextual tool thumbnail 1" />
+                  </div>
+                  <div class="body">
+                    <div class="kicker">Tool • 3 min</div>
+                    <div class="title">Track gas price changes in your area over time</div>
+                  </div>
+                </a>
+                <a class="tile" href="https://investing.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="thumb" data-img="context-2-420x240.webp">
+                    <img src="assets/context-2-420x240.webp" alt="Contextual tool thumbnail 2" />
+                  </div>
+                  <div class="body">
+                    <div class="kicker">Service • 4 min</div>
+                    <div class="title">Check if your investments include energy-sector exposure</div>
+                  </div>
+                </a>
+                <a class="tile" href="https://survival.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                  <div class="thumb" data-img="context-3-420x240.webp">
+                    <img src="assets/context-3-420x240.webp" alt="Contextual tool thumbnail 3" />
+                  </div>
+                  <div class="body">
+                    <div class="kicker">Guide • 5 min</div>
+                    <div class="title">Understand sanctions compliance in plain language</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="subhead">What happened and how it unfolded</div>
+            <p>According to U.S. officials, the ship was tracked for weeks as it moved across the Atlantic. U.S. Coast Guard assets monitored the tanker’s route and activity, and officials said the boarding took place while the vessel was operating on the high seas. U.S. authorities said the boarding was supported by additional U.S. military capabilities.</p>
+
+            <p>Officials said the pursuit involved multiple attempts to locate and interdict the vessel after it became a priority target for sanctions enforcement. U.S. statements did not specify whether any other countries assisted with the operation, nor did they provide a detailed accounting of the ship’s ports of call during the pursuit.</p>
+
+            <a class="adSlot" style="margin:18px 0;" data-img="ad-728x90.webp" href="https://loans.com/?aff=123" target="_blank" rel="nofollow noopener sponsored" aria-label="Sponsored ad">
+              <img src="assets/ad-728x90.webp" alt="Sponsored ad 728 by 90" />
+            </a>
+
+            <div class="subhead">Why the tanker was significant</div>
+            <p>U.S. officials said the tanker was suspected of involvement in sanctioned oil transport and described it as part of broader enforcement efforts aimed at disrupting revenue streams associated with sanctioned actors. U.S. authorities did not publicly outline all the factors that led to the seizure at this moment, but they said the operation was conducted under legal authority.</p>
+
+            <p>If the ship’s cargo is confirmed to be tied to sanctioned oil sales, the case could become a prominent example of how sanctions are enforced beyond U.S. coastal waters. Independent verification of the full cargo chain and business arrangements will depend on court filings and any additional disclosures by officials.</p>
+
+            <div class="subhead">What officials are saying</div>
+            <p>U.S. officials have framed the seizure as a sanctions-enforcement action. The U.S. government has not yet released a comprehensive statement laying out the full evidentiary record or the next procedural steps.</p>
+
+            <p>Russian officials, in initial comments, have objected to the seizure and indicated the vessel was operating in international waters. Russia has not provided detailed information about the ship’s cargo or commercial arrangements, and some details remain disputed.</p>
+
+            <div class="inlineBreak" role="complementary" aria-label="Timeline">
+              <div class="top">
+                <strong>Key updates so far</strong>
+                <small>Timestamped briefings</small>
+              </div>
+              <div class="pad timeline">
+                <div class="tRow">
+                  <div class="tTime">Dec. 20</div>
+                  <div class="tBody">
+                    <p>U.S. officials say tracking intensified after the tanker drew sanctions-enforcement attention on its transatlantic route.</p>
+                    <a href="#" target="_blank" rel="noopener">Open a public docket search</a>
+                  </div>
+                </div>
+                <div class="tRow">
+                  <div class="tTime">Jan. 2</div>
+                  <div class="tBody">
+                    <p>U.S. Coast Guard assets continued monitoring as the ship moved through the North Atlantic corridor.</p>
+                    <a href="#" target="_blank" rel="noopener">Check marine tracking services</a>
+                  </div>
+                </div>
+                <div class="tRow">
+                  <div class="tTime">Jan. 7</div>
+                  <div class="tBody">
+                    <p>U.S. authorities seized the tanker, citing a federal court warrant and sanctions-related allegations.</p>
+                    <a href="#" target="_blank" rel="noopener">View sanctions compliance guidance</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="subhead">How this could affect you</div>
+            <p>For most people, any immediate impact is likely to be indirect. Single-vessel actions do not typically shift fuel prices on their own, but energy markets can react to broader signs of escalation or expanded enforcement. Consumers may see effects only if the incident contributes to wider disruptions in shipping, insurance costs, or diplomatic tensions affecting oil flows.</p>
+
+            <p>Security-related implications are also largely dependent on what comes next. Officials have not indicated an immediate threat to commercial shipping broadly, but maritime operators often adjust routes and procedures in response to enforcement actions and regional risk assessments.</p>
+
+            <div class="subhead">What happens next</div>
+            <p>U.S. authorities are expected to move the case into U.S. legal proceedings, including a review of the vessel, its cargo, and any parties involved in its operation. The ship’s crew status has not been fully detailed publicly, and officials have not said when additional information will be released.</p>
+
+            <p>Diplomatic responses may follow as both governments issue statements or file protests. Additional details are expected to emerge through court documents and further briefings, which could clarify the legal basis for the seizure, the ship’s commercial chain, and whether additional enforcement actions are planned.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card sideCard" aria-label="Sidebar">
+        <div class="pad">
+          <h3>Sponsored resources</h3>
+          <div class="sideList">
+            <a class="sItem" href="https://identity.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="sThumb" data-img="spon-1-120x120.webp">
+                <img src="assets/spon-1-120x120.webp" alt="Sponsored thumbnail 1" />
+              </div>
+              <div class="sText">
+                <div class="title">See if you qualify for identity monitoring this year</div>
+                <div class="sub">Sponsored • Learn more</div>
+              </div>
+            </a>
+            <a class="sItem" href="https://savings.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="sThumb" data-img="spon-2-120x120.webp">
+                <img src="assets/spon-2-120x120.webp" alt="Sponsored thumbnail 2" />
+              </div>
+              <div class="sText">
+                <div class="title">A simple checklist for protecting savings in volatility</div>
+                <div class="sub">Sponsored • View options</div>
+              </div>
+            </a>
+            <a class="sItem" href="https://vpnnews.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="sThumb" data-img="spon-3-120x120.webp">
+                <img src="assets/spon-3-120x120.webp" alt="Sponsored thumbnail 3" />
+              </div>
+              <div class="sText">
+                <div class="title">Compare VPN plans that work on every device</div>
+                <div class="sub">Sponsored • Get details</div>
+              </div>
+            </a>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="adSlot tall" data-img="ad-300x250.webp" href="https://travelnz.com/?aff=123" target="_blank" rel="nofollow noopener sponsored" aria-label="Sponsored sidebar ad">
+              <img src="assets/ad-300x250.webp" alt="Sponsored ad 300 by 250" />
+            </a>
+          </div>
+
+          <div style="margin-top:14px;">
+            <h3 style="margin-bottom:10px;">What to watch next</h3>
+            <div class="sideList">
+              <a class="sItem" href="https://oilprices.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                <div class="sThumb" data-img="watch-1-120x120.webp">
+                  <img src="assets/watch-1-120x120.webp" alt="Watch next thumbnail 1" />
+                </div>
+                <div class="sText">
+                  <div class="title">Set alerts for major moves in crude benchmarks</div>
+                  <div class="sub">Service • 2 min setup</div>
+                </div>
+              </a>
+              <a class="sItem" href="https://shiprisk.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                <div class="sThumb" data-img="watch-2-120x120.webp">
+                  <img src="assets/watch-2-120x120.webp" alt="Watch next thumbnail 2" />
+                </div>
+                <div class="sText">
+                  <div class="title">Check shipping risk ratings for your region</div>
+                  <div class="sub">Tool • Updated daily</div>
+                </div>
+              </a>
+              <a class="sItem" href="https://emergency.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+                <div class="sThumb" data-img="watch-3-120x120.webp">
+                  <img src="assets/watch-3-120x120.webp" alt="Watch next thumbnail 3" />
+                </div>
+                <div class="sText">
+                  <div class="title">Review a quick guide to emergency preparedness</div>
+                  <div class="sub">Guide • 4 min read</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid var(--line); padding:14px 16px;">
+          <h3 style="margin:0 0 10px;">Around the web</h3>
+          <div class="tiles" style="padding:0; grid-template-columns:1fr;">
+            <a class="tile" href="https://protectsavings.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="thumb" data-img="reco-1-420x240.webp">
+                <img src="assets/reco-1-420x240.webp" alt="Around the web tile 1" />
+              </div>
+              <div class="body">
+                <div class="kicker">Resource • 4 min read</div>
+                <div class="title">A practical guide to protecting your financial accounts</div>
+              </div>
+            </a>
+            <a class="tile" href="https://inflationcosts.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="thumb" data-img="reco-2-420x240.webp">
+                <img src="assets/reco-2-420x240.webp" alt="Around the web tile 2" />
+              </div>
+              <div class="body">
+                <div class="kicker">Tool • 3 min read</div>
+                <div class="title">See how inflation changes household costs month to month</div>
+              </div>
+            </a>
+            <a class="tile" href="https://creditmonitoring.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
+              <div class="thumb" data-img="reco-3-420x240.webp">
+                <img src="assets/reco-3-420x240.webp" alt="Around the web tile 3" />
+              </div>
+              <div class="body">
+                <div class="kicker">Service • 5 min read</div>
+                <div class="title">Compare credit monitoring plans with simple pricing</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footRow">
+        <div class="footLinks" aria-label="Footer links">
+          <a href="#" target="_blank" rel="noopener">About</a>
+          <a href="#" target="_blank" rel="noopener">Contact</a>
+          <a href="#" target="_blank" rel="noopener">Privacy</a>
+          <a href="#" target="_blank" rel="noopener">Terms</a>
+          <a href="#" target="_blank" rel="noopener">Ad Choices</a>
+        </div>
+        <div class="copy">© <span id="year"></span> Harborline Ledger. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const now = new Date();
+      const opts = { year:'numeric', month:'short', day:'numeric' };
+      const pub = now.toLocaleDateString(undefined, opts);
+
+      const timeOpts = { hour:'2-digit', minute:'2-digit' };
+      const upd = now.toLocaleTimeString(undefined, timeOpts);
+
+      document.getElementById('pubDate').textContent = pub;
+      document.getElementById('updTime').textContent = upd;
+      document.getElementById('year').textContent = now.getFullYear();
+
+      const bar = document.getElementById('progressBar');
+      const onScroll = () => {
+        const doc = document.documentElement;
+        const scrollTop = doc.scrollTop || document.body.scrollTop;
+        const scrollHeight = doc.scrollHeight - doc.clientHeight;
+        const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+      };
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+    })();
+  </script>
+
+  <!-- :contentReference[oaicite:0]{index=0} -->
+</body>
+</html>
