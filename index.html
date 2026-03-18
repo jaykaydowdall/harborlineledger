@@ -1,637 +1,203 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Harborline Ledger — Judge Blocks Subpoenas in Inquiry Linked to New York AG Letitia James</title>
-  <style>
-    :root{
-      --bg:#ffffff;
-      --ink:#111827;
-      --muted:#6b7280;
-      --line:#e5e7eb;
-      --soft:#f3f4f6;
-      --accent:#1f2937;
-      --card:#ffffff;
-      --shadow: 0 8px 24px rgba(17,24,39,.08);
-      --radius:16px;
-      --max:1120px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font: 16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 16px}
-    .topbar{
-      border-bottom:1px solid var(--line);
-      background:rgba(255,255,255,.92);
-      position:sticky; top:0; z-index:50;
-      backdrop-filter:saturate(180%) blur(12px);
-    }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:12px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px; min-width:200px;
-    }
-    .logo{
-      width:34px; height:34px; border-radius:10px;
-      background:var(--soft);
-      border:1px solid var(--line);
-      display:grid; place-items:center;
-      color:var(--muted); font-weight:700; font-size:12px;
-    }
-    .brand-name{
-      display:flex; flex-direction:column; line-height:1.1;
-    }
-    .brand-name strong{font-size:14px}
-    .brand-name span{font-size:12px; color:var(--muted)}
-    nav{
-      display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
-    }
-    nav a{
-      font-size:13px; color:var(--accent);
-      padding:8px 10px; border-radius:999px;
-      border:1px solid transparent;
-    }
-    nav a:hover{border-color:var(--line); background:var(--soft)}
-    .utils{
-      display:flex; gap:8px; align-items:center; justify-content:flex-end; min-width:140px;
-    }
-    .icon{
-      width:34px; height:34px; border-radius:999px;
-      border:1px solid var(--line); background:#fff;
-      display:grid; place-items:center; color:var(--muted); font-size:14px;
-    }
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Illinois Election Results Begin to Take Shape as Votes Are Counted | Northline Ledger</title> <style> :root{ --bg:#f5f7fa; --card:#ffffff; --text:#17202a; --muted:#5b6673; --line:#d9e1e8; --accent:#0f4c81; --soft:#eef3f7; } *{box-sizing:border-box} body{ margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; } a{color:inherit;text-decoration:none} img{display:block;max-width:100%} .progress-wrap{ position:fixed; top:0; left:0; width:100%; height:4px; background:rgba(0,0,0,.06); z-index:1000; } .progress-bar{ height:100%; width:0%; background:var(--accent); } header{ background:#fff; border-bottom:1px solid var(--line); position:sticky; top:4px; z-index:999; } .topbar,.ticker,.layout,.footer-inner{ max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px; } .topbar{ display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:72px; } .logo{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px; } .logo-mark{ width:40px; height:40px; border-radius:8px; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:18px; font-weight:700; } nav{ display:flex; gap:18px; flex-wrap:wrap; font-size:14px; color:var(--muted); } .utility{ display:flex; gap:10px; color:var(--muted); font-size:14px; } .utility span{ width:32px; height:32px; display:grid; place-items:center; border:1px solid var(--line); border-radius:999px; background:#fff; } .ticker-wrap{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#fff; } .ticker{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding-top:10px; padding-bottom:10px; font-size:13px; } .ticker a{ background:var(--soft); border:1px solid var(--line); padding:10px 12px; border-radius:10px; color:#213140; } .layout{ display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; padding-top:24px; padding-bottom:32px; } main, aside, .module, .hero, .article-card{ background:var(--card); border:1px solid var(--line); border-radius:16px; } .article-card{ padding:24px; overflow:hidden; } .eyebrow{ color:var(--accent); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; } h1{ font-size:40px; line-height:1.12; margin:0 0 14px 0; } .meta{ display:flex; flex-wrap:wrap; gap:10px 16px; color:var(--muted); font-size:14px; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid var(--line); } .hero{ margin:0 0 20px 0; overflow:hidden; } .hero img{ width:100%; height:420px; object-fit:cover; border-radius:14px; } article p{ font-size:18px; margin:0 0 18px 0; } .ad-break{ margin:24px 0; padding:14px; background:#fafcff; border:1px solid var(--line); border-radius:14px; } .ad-break a{ display:block; margin:0 auto; width:max-content; } .ad-inline-1 img{ width:600px; height:680px; object-fit:cover; border-radius:12px; } .ad-inline-2 img{ width:300px; height:250px; object-fit:cover; border-radius:12px; } .inline-links, .recommend, .timeline, .sidebar-block, .resource-list{ margin-top:24px; } .module{ padding:18px; } .module h2, .module h3{ margin:0 0 14px 0; font-size:20px; } .tile-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .tile{ border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff; } .tile .thumb{ height:160px; border-bottom:1px solid var(--line); border-radius:0; overflow:hidden; } .tile .thumb img{ width:100%; height:100%; object-fit:cover; } .tile-copy{ padding:12px; } .tile-copy h4{ margin:0 0 8px 0; font-size:16px; line-height:1.35; } .tile-copy p{ margin:0; font-size:13px; color:var(--muted); } .timeline-item{ display:grid; grid-template-columns:92px 1fr; gap:14px; padding:14px 0; border-top:1px solid var(--line); } .timeline-item:first-of-type{border-top:none;padding-top:0} .time{ font-size:13px; color:var(--accent); font-weight:700; } aside{ padding:18px; height:max-content; } .sidebar-block + .sidebar-block{ margin-top:18px; padding-top:18px; border-top:1px solid var(--line); } .side-ad a{ display:block; width:max-content; } .side-ad img.small{ width:300px; height:250px; object-fit:cover; border-radius:12px; } .side-ad img.tall{ width:160px; height:600px; object-fit:cover; border-radius:12px; } .sponsored-item{ display:grid; grid-template-columns:92px 1fr; gap:12px; padding:12px 0; border-top:1px solid var(--line); } .sponsored-item:first-of-type{border-top:none;padding-top:0} .sponsored-item .mini{ height:70px; border-radius:10px; overflow:hidden; } .sponsored-item .mini img{ width:100%; height:100%; object-fit:cover; } .sponsored-item h4{ margin:0 0 4px 0; font-size:15px; line-height:1.3; } .sponsored-item p{ margin:0; font-size:12px; color:var(--muted); } footer{ background:#0f1720; color:#dce5ed; margin-top:8px; } .footer-inner{ padding-top:28px; padding-bottom:28px; } .footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; border-bottom:1px solid rgba(255,255,255,.14); padding-bottom:18px; margin-bottom:18px; } .footer-links{ display:flex; gap:18px; flex-wrap:wrap; font-size:14px; } .muted{color:var(--muted)} @media (max-width: 980px){ .layout{grid-template-columns:1fr} .tile-grid{grid-template-columns:1fr} h1{font-size:32px} .ticker{grid-template-columns:1fr 1fr} aside{order:2} } @media (max-width: 640px){ .topbar{ align-items:flex-start; flex-direction:column; padding-top:14px; padding-bottom:14px; } nav{gap:12px} .ticker{grid-template-columns:1fr} .article-card{padding:18px} article p{font-size:17px} .hero img{height:260px} .timeline-item, .sponsored-item{grid-template-columns:1fr} } </style> </head> <body> <div class="progress-wrap" aria-hidden="true"> <div class="progress-bar" id="progressBar"></div> </div> <header> <div class="topbar"> <div class="logo"> <div class="logo-mark">NL</div> <div>Northline Ledger</div> </div>   <nav aria-label="Primary">
+    <a href="#">U.S.</a>
+    <a href="#">Politics</a>
+    <a href="#">Business</a>
+    <a href="#">World</a>
+    <a href="#">Finance</a>
+    <a href="#">Lifestyle</a>
+  </nav>
 
-    /* progress bar */
-    .progress{
-      height:3px; background:var(--line);
-      position:absolute; left:0; right:0; bottom:-1px;
-    }
-    .progress > div{
-      height:100%; width:0%;
-      background:var(--ink);
-      transition:width .08s linear;
-    }
+  <div class="utility" aria-hidden="true">
+    <span>⌕</span>
+    <span>☰</span>
+  </div>
+</div>
+<div class="ticker-wrap">
+  <div class="ticker" aria-label="Top reads">
+    <a href="https://app.optimataxrelief.com/first-step/">Tax checklist moves many households into spring planning mode</a>
+    <a href="https://www.empower.com/get-started">Five money steps readers often take after major election nights</a>
+    <a href="https://my.identityguard.com/enrollment/v1/1">How identity monitoring tools fit into everyday financial routines</a>
+    <a href="https://www.transunion.com/credit-scores-reports/credit-premium-unturned">What to compare before choosing a high-yield savings account</a>
+  </div>
+</div>
+</header> <div class="layout"> <main> <div class="article-card"> <div class="eyebrow">Politics</div> <h1>Illinois Election Results Begin to Take Shape as Votes Are Counted</h1> <div class="meta"> <span>By Northline Ledger Staff</span> <span id="publishDate">Published today</span> <span>Updated as returns are reported</span> </div>
+    <div class="hero">
+      <img src="assets/IMG_HERO_1536x1024.webp" alt="Illinois election coverage hero image" />
+    </div>
 
-    /* ticker */
-    .ticker{
-      border-bottom:1px solid var(--line);
-      background:var(--soft);
-    }
-    .ticker-inner{
-      display:flex; gap:16px; overflow:auto; padding:10px 0;
-      scrollbar-width: thin;
-    }
-    .ticker a{
-      white-space:nowrap;
-      font-size:13px;
-      padding:8px 10px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:999px;
-      flex:0 0 auto;
-    }
-    .ticker a span{color:var(--muted)}
+    <article>
+      <p>Early results from Illinois’ primary elections are beginning to come into focus, with several key races already called and others still being finalized as ballots continue to be counted across the state.</p>
 
-    /* layout */
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 340px;
-      gap:22px;
-      padding:18px 0 36px;
-      align-items:start;
-    }
-    main{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .article-head{
-      padding:18px 18px 0;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:#fff;
-    }
-    h1{
-      margin:12px 0 10px;
-      font-size:28px; line-height:1.15;
-      letter-spacing:-.02em;
-    }
-    .meta{
-      display:flex; flex-wrap:wrap; gap:10px;
-      color:var(--muted);
-      font-size:13px;
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
-    }
-    .meta strong{color:var(--ink); font-weight:650}
-    .hero{
-      padding:16px 18px 0;
-    }
+      <p>Among the most significant confirmed outcomes so far is the Democratic primary for U.S. Senate. Illinois Lieutenant Governor Juliana Stratton has secured the nomination, defeating U.S. Representatives Raja Krishnamoorthi and Robin Kelly. With a large majority of votes counted, Stratton held a clear lead, according to election reporting, positioning her as the Democratic candidate to replace retiring Senator Dick Durbin in November.</p>
 
-    /* visible placeholders */
-    .ph{
-      background:linear-gradient(180deg, #f8fafc, #eef2f7);
-      border:1px dashed #cbd5e1;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      color:#475569;
-      text-align:center;
-      padding:14px;
-      position:relative;
-      overflow:hidden;
-    }
-    .ph span{
-      font-size:12px;
-      line-height:1.25;
-      max-width:90%;
-      word-break:break-word;
-    }
-    .ph.hero{height:340px}
-    .ph.ad-300x250{height:250px}
-    .ph.ad-300x250{height:250px}
-    .ph.ad-600x300{height:300px}
-    .ph.thumb{height:160px}
-    .ph.tile{height:190px}
+      <p>On the Republican side, Don Tracy has won his party’s Senate primary, setting up a general election matchup that is expected to draw national attention later this year.</p>
 
-    .article-body{
-      padding:10px 18px 18px;
-      font-size:16px;
-    }
-    .article-body p{margin:12px 0}
-    .divider{
-      margin:18px 0;
-      height:1px; background:var(--line);
-    }
+      <div class="ad-break ad-inline-1">
+        <a href="https://www.fastcashonline.co/index.php" target="_blank" rel="nofollow noopener sponsored">
+          <img src="assets/AD_INLINE_1_600x680.webp" alt="Sponsored in-article advertisement" />
+        </a>
+      </div>
 
-    /* in-article modules */
-    .module{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:16px;
-      padding:14px;
-      margin:18px 0;
-    }
-    .module h3{
-      margin:0 0 10px;
-      font-size:14px; letter-spacing:.01em;
-      color:var(--accent);
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .module h3 small{color:var(--muted); font-weight:500}
+      <p>Several congressional primaries have also been decided. In Illinois’ 15th District, incumbent Republican Mary Miller won her primary decisively, while Democrat Jennifer Todd secured her party’s nomination in a closer race. These results finalize the candidates who will compete in November for control of the seat.</p>
 
-    .tiles{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .tile{
-      border:1px solid var(--line);
-      border-radius:14px;
-      overflow:hidden;
-      background:#fff;
-      display:flex;
-      flex-direction:column;
-      min-height:260px;
-    }
-    .tile .txt{padding:10px}
-    .tile .txt .t{font-size:14px; font-weight:650; line-height:1.25; margin:0 0 6px}
-    .tile .txt .m{font-size:12px; color:var(--muted)}
-    .tile:hover{box-shadow:0 10px 22px rgba(17,24,39,.08)}
+      <p>In statewide races, the Republican gubernatorial primary has been called for Darren Bailey, who performed strongly in rural and downstate counties. Bailey will face incumbent Democratic Governor J.B. Pritzker in the general election.</p>
 
-    /* timeline */
-    .timeline{display:grid; gap:10px}
-    .titem{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
-      background:#fff;
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-    }
-    .tstamp{
-      flex:0 0 auto;
-      font-size:12px;
-      color:var(--muted);
-      padding:6px 10px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:var(--soft);
-    }
-    .tcontent{min-width:0}
-    .tcontent p{margin:0; font-size:13px}
-    .tcontent a{display:inline-block; margin-top:6px; font-size:12px; color:#0f172a; border-bottom:1px solid var(--line)}
+      <p>Additional results are emerging at the state and local levels. In the 56th State Senate District, Marsie Geldert-Murphey won the Democratic primary, while several other legislative and county-level races have also been decided, according to local election reporting.</p>
 
-    /* sidebar */
-    aside{
-      display:flex; flex-direction:column; gap:16px;
-      position:sticky; top:74px;
-    }
-    .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:#fff;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .card .hd{
-      padding:12px 14px;
-      border-bottom:1px solid var(--line);
-      display:flex; align-items:center; justify-content:space-between;
-    }
-    .card .hd strong{font-size:13px}
-    .card .bd{padding:14px}
-    .list{
-      display:grid; gap:10px;
-    }
-    .sitem{
-      display:grid;
-      grid-template-columns: 90px 1fr;
-      gap:10px;
-      align-items:start;
-      padding:10px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background:#fff;
-    }
-    .sitem .ph{border-radius:12px}
-    .sitem .h{margin:0 0 4px; font-size:13px; font-weight:650; line-height:1.25}
-    .sitem .sub{font-size:12px; color:var(--muted)}
-    .mini-links{
-      display:grid; gap:10px;
-    }
-    .mini-links a{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:10px;
-      background:#fff;
-      font-size:13px;
-    }
-    .mini-links a span{color:var(--muted); font-size:12px; display:block; margin-top:4px}
-
-    /* footer */
-    footer{
-      border-top:1px solid var(--line);
-      background:var(--soft);
-      padding:22px 0;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap:14px;
-      align-items:start;
-    }
-    .foot-links{
-      display:flex; gap:12px; flex-wrap:wrap;
-    }
-    .foot-links a{
-      font-size:13px; color:var(--accent);
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-    }
-    .copy{color:var(--muted); font-size:12px}
-
-    /* responsive */
-    @media (max-width: 980px){
-      .grid{grid-template-columns:1fr; gap:16px}
-      aside{position:static}
-    }
-    @media (max-width: 720px){
-      h1{font-size:24px}
-      .tiles{grid-template-columns:1fr}
-      .ph.hero{height:240px}
-      nav{display:none}
-      .brand{min-width:auto}
-      .utils{min-width:auto}
-    }
-  </style>
-</head>
-<body>
-
-  <header class="topbar">
-    <div class="wrap topbar-inner">
-      <a class="brand" href="index.html" aria-label="Harborline Ledger Home">
-        <div class="logo">HL</div>
-        <div class="brand-name">
-          <strong>Harborline Ledger</strong>
-          <span>Independent News Desk</span>
+      <div class="module inline-links">
+        <h2>Helpful next steps readers often check</h2>
+        <div class="tile-grid">
+          <a class="tile" href="https://app.optimataxrelief.com/first-step/" target="_blank" rel="nofollow noopener sponsored">
+            <div class="thumb" role="img" aria-label="Context tile 1">
+              <img src="assets/IMG_CONTEXT_1_480x320.webp" alt="Tax withholding review resource" />
+            </div>
+            <div class="tile-copy">
+              <h4>How to review your tax withholding after a volatile election season</h4>
+              <p>Explainer • 3 min read</p>
+            </div>
+          </a>
+          <a class="tile" href="https://speedynetloan.com/" target="_blank" rel="nofollow noopener sponsored">
+            <div class="thumb" role="img" aria-label="Context tile 2">
+              <img src="assets/IMG_CONTEXT_2_480x320.webp" alt="Credit monitoring habits resource" />
+            </div>
+            <div class="tile-copy">
+              <h4>Simple credit monitoring habits many households adopt during major news cycles</h4>
+              <p>Guide • 4 min read</p>
+            </div>
+          </a>
+          <a class="tile" href="https://www.transunion.com/credit-scores-reports/credit-premium-unturned" target="_blank" rel="nofollow noopener sponsored">
+            <div class="thumb" role="img" aria-label="Context tile 3">
+              <img src="assets/IMG_CONTEXT_3_480x320.webp" alt="Savings account comparison resource" />
+            </div>
+            <div class="tile-copy">
+              <h4>What savers compare before moving cash into a higher-yield account</h4>
+              <p>Resource • 3 min read</p>
+            </div>
+          </a>
         </div>
-      </a>
+      </div>
 
-      <nav aria-label="Primary">
-        <a href="#">U.S.</a>
-        <a href="#">Politics</a>
-        <a href="#">Business</a>
-        <a href="#">Law</a>
-        <a href="#">Tech</a>
-      </nav>
+      <p>For voters, these early outcomes determine which candidates will appear on the general election ballot in November. While primary elections do not decide final officeholders, they shape the choices voters will have and can signal the direction of each party heading into the fall campaign.</p>
 
-      <div class="utils" aria-label="Utilities">
-        <div class="icon" title="Search">⌕</div>
-        <div class="icon" title="Alerts">🔔</div>
-        <div class="icon" title="Account">👤</div>
+      <p>At this stage, the most significant developments center on open seats and high-profile contests. The Senate race is drawing particular attention due to the retirement of a long-serving incumbent, while competitive congressional districts and the governor’s race are expected to influence both state and national political dynamics.</p>
+
+      <div class="ad-break ad-inline-2">
+        <a href="https://www.transunion.com/credit-scores-reports/credit-premium-unturned" target="_blank" rel="nofollow noopener sponsored">
+          <img src="assets/AD_INLINE_2_300x250.gif" alt="Sponsored in-article advertisement" />
+        </a>
+      </div>
+
+      <p>However, not all results are final. Election officials continue to count remaining ballots, including early voting and mail-in votes that are processed after polls close. In some races, especially those with narrower margins, outcomes may not be officially confirmed until all votes are tabulated.</p>
+
+      <p>Looking ahead, attention will shift to how these nominees campaign for the general election and whether any close primary results lead to recounts or delayed certifications. Voter turnout levels and regional voting patterns may also become clearer as complete data is released.</p>
+
+      <p>For now, the picture in Illinois is becoming clearer but remains incomplete. Additional updates are expected as vote counting continues and more races are formally called.</p>
+    </article>
+
+    <div class="module timeline">
+      <h2>What to watch next</h2>
+      <div class="timeline-item">
+        <div class="time">8:15 p.m.</div>
+        <div>
+          County clerks continue reporting batches of results, which can shift margins in races that remain close.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Late evening</div>
+        <div>
+          More complete tallies from mail and early-vote processing are expected to clarify which contests are truly settled.
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">Next certification window</div>
+        <div>
+          Election officials are expected to move from unofficial returns to certified totals after all eligible ballots are reviewed.
+        </div>
       </div>
     </div>
-    <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
-  </header>
 
-  <div class="ticker">
-    <div class="wrap ticker-inner" aria-label="Top headlines ticker">
-      <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">A short audio routine that claims sharper focus<span>• Quick read</span></a>
-      <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">Could forgotten Tesla tech change your power bill?<span>• Video</span></a>
-      <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">This quick check could put $1,000 on your radar<span>• Quiz</span></a>
-      <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">Legit ways people earn online in spare time<span>• Survey</span></a>
+    <div class="module recommend">
+      <h2>Readers also browse after election updates</h2>
+      <div class="tile-grid">
+        <a class="tile" href="https://www.empower.com/get-started" target="_blank" rel="nofollow noopener sponsored">
+          <div class="thumb" role="img" aria-label="Recommended tile 1">
+            <img src="assets/IMG_REC_1_480x320.webp" alt="Retirement planning resource" />
+          </div>
+          <div class="tile-copy">
+            <h4>Retirement planning checklists that become useful during uncertain policy periods</h4>
+            <p>Finance • 4 min read</p>
+          </div>
+        </a>
+        <a class="tile" href="https://my.identityguard.com/enrollment/v1/1" target="_blank" rel="nofollow noopener sponsored">
+          <div class="thumb" role="img" aria-label="Recommended tile 2">
+            <img src="assets/IMG_REC_2_480x320.webp" alt="Identity protection comparison resource" />
+          </div>
+          <div class="tile-copy">
+            <h4>How households compare identity protection services before tax season ramps up</h4>
+            <p>Security • 3 min read</p>
+          </div>
+        </a>
+        <a class="tile" href="https://speedynetloan.com/" target="_blank" rel="nofollow noopener sponsored">
+          <div class="thumb" role="img" aria-label="Recommended tile 3">
+            <img src="assets/IMG_REC_3_480x320.webp" alt="Short-term cash options resource" />
+          </div>
+          <div class="tile-copy">
+            <h4>Ways savers evaluate short-term cash options when rates remain competitive</h4>
+            <p>Money • 4 min read</p>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
+</main>
 
-  <div class="wrap grid">
-    <main>
-      <section class="article-head">
-        <div class="kicker">U.S. • Law</div>
-        <h1>Judge Blocks Subpoenas in Inquiry Linked to New York AG Letitia James</h1>
-        <div class="meta">
-          <span><strong>By Harborline Ledger Staff</strong></span>
-          <span>Published <span id="pubDate">—</span></span>
-          <span>•</span>
-          <span>Updated as filings emerge</span>
-        </div>
-      </section>
-
-      <section class="hero" aria-label="Hero image placeholder">
-        <img src="assets/IMG_HERO_1536x1024.webp" alt="Hero image" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);" />
-      </section>
-
-      <article class="article-body" id="articleBody">
-        <p>A federal judge has blocked subpoenas issued as part of a Justice Department inquiry involving New York Attorney General Letitia James, ruling that the federal prosecutor who authorized them was not lawfully serving in his role. The decision pauses the subpoenas and removes the prosecutor from further involvement in the matter.</p>
-
-        <p>The ruling came from U.S. District Judge Lorna G. Schofield, who determined that John A. Sarcone III, the acting U.S. attorney for the Northern District of New York, exceeded the legal limits of his interim appointment. Because of that, the judge said, subpoenas he issued lacked valid legal authority.</p>
-
-        <p>The blocked subpoenas had sought records from James’s office related to civil lawsuits she pursued against former President Donald Trump, his business entities, and the National Rifle Association. Those cases were brought under New York law and resulted in significant legal exposure for the defendants. The federal inquiry has focused on how those state-level cases were handled.</p>
-
-        <div class="module" aria-label="Contextual links">
-          <h3>Contextual links <small>Tools readers commonly check next</small></h3>
-          <div class="tiles">
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_CONTEXT_1_480x320.webp" alt="Contextual tile 1" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">Check your borrowing costs across lenders in real time</div>
-                <div class="m">Resource • 1 min read</div>
-              </div>
-            </a>
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_CONTEXT_2_480x320.webp" alt="Contextual tile 2" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">What changes when you compare policies side by side</div>
-                <div class="m">Auto • 3 min read</div>
-              </div>
-            </a>
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_CONTEXT_3_480x320.webp" alt="Contextual tile 3" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">A surprising shortcut to homemade dinners tonight</div>
-                <div class="m">Recipes • 3 min read</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <p>Under federal law, an acting U.S. attorney may serve for a limited period without Senate confirmation. Court filings show that Sarcone’s initial appointment expired after that statutory window. The Justice Department attempted to keep him in place by assigning additional titles, including “special attorney,” but Judge Schofield said those steps did not comply with governing law.</p>
-
-        <div class="divider" aria-hidden="true"></div>
-
-        <div class="module" aria-label="In-article display placement">
-          <h3>Advertisement</h3>
-          <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored" aria-label="In-article advertisement">
-            <img src="assets/AD_INARTICLE_1_600x300.webp" alt="In-article ad" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);" />
-          </a>
-        </div>
-
-        <p>In her decision, the judge wrote that federal appointment rules cannot be bypassed through administrative maneuvers. As a result, she ruled that Sarcone was serving unlawfully at the time the subpoenas were issued, making them invalid.</p>
-
-        <p>The ruling directly affects the inquiry involving James by halting the government’s current attempt to obtain information from her office. It also bars Sarcone from taking further action in the investigation. The decision does not, however, permanently block the inquiry itself.</p>
-
-        <p>For the broader public, the case highlights how procedural rules can determine whether government investigations are allowed to move forward. Subpoenas are powerful legal tools, but courts require that they be issued by officials who are properly appointed under the law.</p>
-
-        <div class="module" aria-label="Timeline">
-          <h3>Timeline <small>Key procedural moments</small></h3>
-          <div class="timeline">
-            <div class="titem">
-              <div class="tstamp">09:10 a.m.</div>
-              <div class="tcontent">
-                <p>The court issues an order blocking the subpoenas while the appointment question is addressed.</p>
-                <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">Open court document viewer</a>
-              </div>
-            </div>
-            <div class="titem">
-              <div class="tstamp">11:45 a.m.</div>
-              <div class="tcontent">
-                <p>The judge finds the acting prosecutor exceeded statutory limits and disqualifies him from the inquiry.</p>
-                <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">Check federal docket tools</a>
-              </div>
-            </div>
-            <div class="titem">
-              <div class="tstamp">02:30 p.m.</div>
-              <div class="tcontent">
-                <p>Parties are left to consider next steps, including appeal or reissuing demands under a valid appointment.</p>
-                <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">Track updates via legal alerts</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p>James has previously said the federal inquiry was politically motivated, an allegation the Justice Department has denied. Following the ruling, her office said the decision reinforced the importance of the rule of law. The Justice Department has maintained that its appointment approach was valid.</p>
-
-        <p>Next, federal officials could appeal the judge’s decision or attempt to reissue subpoenas through a properly appointed U.S. attorney. Until then, the subpoenas remain blocked, and the inquiry cannot proceed in its current form.</p>
-
-        <div class="module" aria-label="What to watch next">
-          <h3>What to watch next <small>Our Partners</small></h3>
-          <div class="mini-links">
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              Why some homeowners are talking about building their own generator system
-              <span>Could this forgotten Tesla tech change your power bill?</span>
-            </a>
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              Why nighttime bathroom trips aren’t just “getting older”
-              <span>How to unclog your prostate</span>
-            </a>
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              AUDIFORT
-              <span>Scientists discover brain's "mute button" for Tinnitus relief</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="module" aria-label="Recommended">
-          <h3>Recommended for you <small>Reader resources</small></h3>
-          <div class="tiles">
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_REC_1_480x320.webp" alt="Recommended tile 1" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">Compare niche Christian dating platforms and their features</div>
-                <div class="m">Tools • 4 min read</div>
-              </div>
-            </a>
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_REC_2_480x320.webp" alt="Recommended tile 2" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">Why some work-from-home ideas pay better than expected</div>
-                <div class="m">Guide • 5 min read</div>
-              </div>
-            </a>
-            <a class="tile" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_REC_3_480x320.webp" alt="Recommended tile 3" style="width:100%;height:190px;object-fit:cover;display:block;" />
-              <div class="txt">
-                <div class="t">Win $1,000 Prepaid Visa Card</div>
-                <div class="m">Finance • 6 min read</div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-      </article>
-    </main>
-
-    <aside aria-label="Secondary column">
-      <div class="card" aria-label="Sidebar ad slot 300x250">
-        <div class="hd"><strong>Sponsored</strong><span style="color:var(--muted);font-size:12px">Ad</span></div>
-        <div class="bd">
-          <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored" aria-label="Sidebar ad 1">
-            <img src="assets/AD_SIDEBAR_1_300x250.webp" alt="Sidebar ad 1" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);" />
-          </a>
-        </div>
-      </div>
-
-      <div class="card" aria-label="Sponsored list">
-        <div class="hd"><strong>Sponsored resources</strong><span style="color:var(--muted);font-size:12px">External links</span></div>
-        <div class="bd">
-          <div class="list">
-            <a class="sitem" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_SPON_1_480x320.webp" alt="Sponsored list thumb 1" style="width:90px;height:160px;object-fit:cover;display:block;border-radius:12px;border:1px solid var(--line);" />
-              <div>
-                <p class="h">A faith-focused singles network few people notice</p>
-                <div class="sub">Sponsored • Learn more</div>
-              </div>
-            </a>
-            <a class="sitem" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_SPON_2_480x320.webp" alt="Sponsored list thumb 2" style="width:90px;height:160px;object-fit:cover;display:block;border-radius:12px;border:1px solid var(--line);" />
-              <div>
-                <p class="h">Compare real short-term loan options</p>
-                <div class="sub">Sponsored • Learn more</div>
-              </div>
-            </a>
-            <a class="sitem" href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              <img src="assets/IMG_SPON_3_480x320.webp" alt="Sponsored list thumb 3" style="width:90px;height:160px;object-fit:cover;display:block;border-radius:12px;border:1px solid var(--line);" />
-              <div>
-                <p class="h">What if dinner could take 15 minutes to make?</p>
-                <div class="sub">Sponsored • Learn more</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" aria-label="Sidebar ad slot 300x250">
-        <div class="hd"><strong>Sponsored</strong><span style="color:var(--muted);font-size:12px">Ad</span></div>
-        <div class="bd">
-          <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored" aria-label="Sidebar ad 2">
-            <img src="assets/AD_SIDEBAR_2_300x250.webp" alt="Sidebar ad 2" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);" />
-          </a>
-        </div>
-      </div>
-
-      <div class="card" aria-label="Quick links">
-        <div class="hd"><strong>Quick tools</strong><span style="color:var(--muted);font-size:12px">External</span></div>
-        <div class="bd">
-          <div class="mini-links">
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              Many overpay for car insurance without realizing why
-              <span>Checklist for email, banking, and social accounts</span>
-            </a>
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              Could a 12-minute recording influence your memory?
-              <span>Privacy controls most people miss</span>
-            </a>
-            <a href="https://domain.com/?aff=123" target="_blank" rel="nofollow noopener sponsored">
-              The DIY energy secret power companies don’t want you to see
-              <span>Templates for naming and storing important files</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </aside>
+<aside>
+  <div class="sidebar-block side-ad">
+    <h3>Reader resource</h3>
+    <a href="https://app.optimataxrelief.com/first-step/" target="_blank" rel="nofollow noopener sponsored">
+      <img class="small" src="assets/AD_SIDEBAR_1_300x250.webp" alt="Sponsored sidebar advertisement" />
+    </a>
   </div>
 
-  <footer>
-    <div class="wrap footer-grid">
+  <div class="sidebar-block">
+    <h3>Popular tools readers check next</h3>
+
+    <a class="sponsored-item" href="https://www.peoplefinders.com/dating" target="_blank" rel="nofollow noopener sponsored">
+      <div class="mini" role="img" aria-label="Sponsored item 1">
+        <img src="assets/IMG_SPONSORED_1_480x320.webp" alt="People search sponsored resource" />
+      </div>
       <div>
-        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-          <div class="logo" aria-hidden="true">HL</div>
-          <div>
-            <strong style="display:block; font-size:14px;">Harborline Ledger</strong>
-            <span class="copy">Clear reporting, readable on your phone.</span>
-          </div>
-        </div>
-        <div class="foot-links">
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Newsletter</a>
-        </div>
+        <h4>Find Red Flags Before You Meet Someone New</h4>
+        <p>Sponsored • Learn more</p>
       </div>
-      <div style="text-align:right;">
-        <div class="copy" id="copyright">© <span id="year"></span> Harborline Ledger. All rights reserved.</div>
-        <div class="copy" style="margin-top:8px;">All links on this page point to external destinations.</div>
+    </a>
+
+    <a class="sponsored-item" href="https://my.identityguard.com/enrollment/v1/1" target="_blank" rel="nofollow noopener sponsored">
+      <div class="mini" role="img" aria-label="Sponsored item 2">
+        <img src="assets/IMG_SPONSORED_2_480x320.webp" alt="Identity alerts sponsored resource" />
       </div>
-    </div>
-  </footer>
+      <div>
+        <h4>Identity alerts that can help flag unusual account activity</h4>
+        <p>Sponsored • Learn more</p>
+      </div>
+    </a>
 
-  <script>
-    // runtime publish date (local)
-    (function(){
-      const d = new Date();
-      const opts = { year:'numeric', month:'long', day:'numeric' };
-      document.getElementById('pubDate').textContent = d.toLocaleDateString(undefined, opts);
-      document.getElementById('year').textContent = d.getFullYear();
-    })();
+    <a class="sponsored-item" href="https://www.empower.com/get-started" target="_blank" rel="nofollow noopener sponsored">
+      <div class="mini" role="img" aria-label="Sponsored item 3">
+        <img src="assets/IMG_SPONSORED_3_480x320.webp" alt="Retirement calculator sponsored resource" />
+      </div>
+      <div>
+        <h4>Retirement calculators people use before making portfolio updates</h4>
+        <p>Sponsored • Learn more</p>
+      </div>
+    </a>
+  </div>
 
-    // reading progress bar
-    (function(){
-      const bar = document.getElementById('progressBar');
-      const article = document.getElementById('articleBody');
-      function onScroll(){
-        const rect = article.getBoundingClientRect();
-        const vh = window.innerHeight || document.documentElement.clientHeight;
-        const total = rect.height;
-        const progressed = Math.min(Math.max(vh - rect.top, 0), total);
-        const pct = total ? (progressed / total) * 100 : 0;
-        bar.style.width = pct.toFixed(2) + '%';
-      }
-      window.addEventListener('scroll', onScroll, {passive:true});
-      window.addEventListener('resize', onScroll);
-      onScroll();
-    })();
-  </script>
-</body>
-</html>
+  <div class="sidebar-block side-ad">
+    <h3>Planning guide</h3>
+    <a href="https://app.optimataxrelief.com/first-step/" target="_blank" rel="nofollow noopener sponsored">
+      <img class="tall" src="assets/AD_SIDEBAR_2_160x600.webp" alt="Sponsored sidebar advertisement" />
+    </a>
+  </div>
+</aside>
+</div> <footer> <div class="footer-inner"> <div class="footer-top"> <div class="logo"> <div class="logo-mark">NL</div> <div>Northline Ledger</div> </div> <div class="footer-links"> <a href="#">About</a> <a href="#">Contact</a> <a href="#">Privacy</a> <a href="#">Terms</a> </div> </div> <div style="font-size:13px;">© <span id="year"></span> Northline Ledger. All rights reserved.</div> </div> </footer> <script> (function () { const d = new Date(); const publish = d.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }); document.getElementById('publishDate').textContent = 'Published ' + publish; document.getElementById('year').textContent = d.getFullYear(); const bar = document.getElementById('progressBar'); const onScroll = function () { const scrollTop = window.scrollY || document.documentElement.scrollTop; const docHeight = document.documentElement.scrollHeight - window.innerHeight; const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0; bar.style.width = pct + '%'; }; document.addEventListener('scroll', onScroll, { passive: true }); onScroll(); })(); </script> </body> </html>
